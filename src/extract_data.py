@@ -4,6 +4,28 @@ Set of functions to extract valuable datapoints from the hvz_peg_stm.js file
 
 import os
 import shutil
+import urllib.request
+import datetime
+
+def get_datafile_from_server():
+    """
+    downloads the newest datafile from the hvz_page
+    """
+    print('Beginning file download.')
+    
+    current_time = str(datetime.datetime.now().strftime('%Y-%m-%d_%H:%M'))
+    
+    url  = 'https://www.hvz.baden-wuerttemberg.de/js/hvz_peg_stm.js'
+    save_path = '../js_basefiles/js_files/'
+    filename  = 'hvz_peg_stm' + current_time + '.js'
+    complete_save_path = save_path + filename
+    
+    urllib.request.urlretrieve(url, complete_save_path)
+    
+    print('finished downloading. file saved to: ' + filename)
+    
+    return complete_save_path
+
 
 def load_js_datafile(filename):
     """
