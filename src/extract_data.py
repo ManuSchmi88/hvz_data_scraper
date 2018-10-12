@@ -59,4 +59,3 @@ def extract_time_kill_header(processed_data_object):
     list_without_header = processed_data_object[6:]
     
     return extraction_time, list_without_header
-    
