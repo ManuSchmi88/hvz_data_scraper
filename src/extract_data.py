@@ -59,3 +59,19 @@ def extract_time_kill_header(processed_data_object):
     list_without_header = processed_data_object[6:]
     
     return extraction_time, list_without_header
+
+def create_output_file(output_path):
+    """
+    Function needs to search if a output file is already present. 
+    If true: pass
+    Else: Create new output file .txt
+
+    Format will be something like
+
+    [12.10.2018][10:30][Echaz, Pfullingen][36]
+    """
+
+    if output_created == True:
+            pass
+    else: 
+        #do something
